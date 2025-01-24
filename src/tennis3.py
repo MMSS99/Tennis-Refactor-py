@@ -1,7 +1,7 @@
 class TennisGame3:
-    def __init__(self, player1_name, player2_name):
-        self.p1_n = player1_name
-        self.p2_n = player2_name
+    def __init__(self, leftplayer_name, rightplayer_name):
+        self.p1_n = leftplayer_name
+        self.p2_n = rightplayer_name
         self.p1 = 0
         self.p2 = 0
 

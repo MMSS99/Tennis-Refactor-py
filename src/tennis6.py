@@ -1,7 +1,7 @@
 class TennisGame6:
-    def __init__(self, player1_name, player2_name):
-        self.player1_name = player1_name
-        self.player2_name = player2_name
+    def __init__(self, leftplayer_name, rightplayer_name):
+        self.leftplayer_name = leftplayer_name
+        self.rightplayer_name = rightplayer_name
         self.player1_score = 0
         self.player2_score = 0
 
@@ -33,13 +33,13 @@ class TennisGame6:
             end_game_score: str
 
             if self.player1_score - self.player2_score == 1:
-                end_game_score = "Advantage " + self.player1_name
+                end_game_score = "Advantage " + self.leftplayer_name
             elif self.player1_score - self.player2_score == -1:
-                end_game_score = "Advantage " + self.player2_name
+                end_game_score = "Advantage " + self.rightplayer_name
             elif self.player1_score - self.player2_score >= 2:
-                end_game_score = "Win for " + self.player1_name
+                end_game_score = "Win for " + self.leftplayer_name
             else:
-                end_game_score = "Win for " + self.player2_name
+                end_game_score = "Win for " + self.rightplayer_name
 
             result = end_game_score
         else:

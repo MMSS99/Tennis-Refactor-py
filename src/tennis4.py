@@ -1,7 +1,7 @@
 class TennisGame4:
-    def __init__(self, player1_name, player2_name):
-        self.server = player1_name
-        self.receiver = player2_name
+    def __init__(self, leftplayer_name, rightplayer_name):
+        self.server = leftplayer_name
+        self.receiver = rightplayer_name
         self.server_score = 0
         self.receiver_score = 0
 

@@ -1,13 +1,13 @@
 import pytest
 
-from tennis1 import TennisGame1
-from tennis2 import TennisGame2
-from tennis3 import TennisGame3
-from tennis4 import TennisGame4
-from tennis5 import TennisGame5
-from tennis6 import TennisGame6
-from tennis7 import TennisGame7
-from tennis_unittest import play_game, test_cases
+from src.tennis1 import TennisGame1
+from src.tennis2 import TennisGame2
+from src.tennis3 import TennisGame3
+from src.tennis4 import TennisGame4
+from src.tennis5 import TennisGame5
+from src.tennis6 import TennisGame6
+from src.tennis7 import TennisGame7
+from test.tennis_unittest import play_game, test_cases
 
 
 @pytest.mark.parametrize(
@@ -30,7 +30,7 @@ def test_get_score_most_games(
     game = play_game(TennisGameClass, p1_points, p2_points, p1_name, p2_name)
     assert score == game.score()
 
-
+# Tiene que ir separado.
 @pytest.mark.parametrize(
     "p1_points p2_points score p1_name p2_name".split(), test_cases
 )

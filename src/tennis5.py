@@ -1,7 +1,7 @@
 class TennisGame5:
-    def __init__(self, player1_name, player2_name):
-        self.player1_name = player1_name
-        self.player2_name = player2_name
+    def __init__(self, leftplayer_name, rightplayer_name):
+        self.leftplayer_name = leftplayer_name
+        self.rightplayer_name = rightplayer_name
         self.player1_score = 0
         self.player2_score = 0
 

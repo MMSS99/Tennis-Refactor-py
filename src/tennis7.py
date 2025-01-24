@@ -1,7 +1,7 @@
 class TennisGame7:
-    def __init__(self, player1_name, player2_name):
-        self.player1_name = player1_name
-        self.player2_name = player2_name
+    def __init__(self, leftplayer_name, rightplayer_name):
+        self.leftplayer_name = leftplayer_name
+        self.rightplayer_name = rightplayer_name
         self.player1_score = 0
         self.player2_score = 0
 
@@ -29,13 +29,13 @@ class TennisGame7:
         elif self.player1_score >= 4 or self.player2_score >= 4:
             # end-game score
             if self.player1_score - self.player2_score == 1:
-                result += "Advantage " + self.player1_name
+                result += "Advantage " + self.leftplayer_name
             elif self.player1_score - self.player2_score == -1:
-                result += "Advantage " + self.player2_name
+                result += "Advantage " + self.rightplayer_name
             elif self.player1_score - self.player2_score >= 2:
-                result += "Win for " + self.player1_name
+                result += "Win for " + self.leftplayer_name
             else:
-                result += "Win for " + self.player2_name
+                result += "Win for " + self.rightplayer_name
 
         else:
             # regular score
