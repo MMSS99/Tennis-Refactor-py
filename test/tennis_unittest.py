@@ -40,13 +40,13 @@ test_cases = [
 ]
 
 
-def play_game(TennisGame, p1_points, p2_points, p1_name, p2_name):
-    game = TennisGame(p1_name, p2_name)
-    for i in range(max(p1_points, p2_points)):
-        if i < p1_points:
-            game.won_point(p1_name)
-        if i < p2_points:
-            game.won_point(p2_name)
+def play_game(TennisGame, leftplayer_points_points, rightplayer_points_points, leftplayer_nameame, rightplayer_nameame):
+    game = TennisGame(leftplayer_nameame, rightplayer_nameame)
+    for i in range(max(leftplayer_points_points, rightplayer_points_points)):
+        if i < leftplayer_points_points:
+            game.won_point(leftplayer_nameame)
+        if i < rightplayer_points_points:
+            game.won_point(rightplayer_nameame)
     return game
 
 
@@ -57,9 +57,9 @@ class TestTennis(unittest.TestCase):
             TennisGame3,
         ):
             for testcase in test_cases:
-                (p1_points, p2_points, score, p1_name, p2_name) = testcase
+                (leftplayer_points_points, rightplayer_points_points, score, leftplayer_nameame, rightplayer_nameame) = testcase
                 game = play_game(
-                    TennisGameClass, p1_points, p2_points, p1_name, p2_name
+                    TennisGameClass, leftplayer_points_points, rightplayer_points_points, leftplayer_nameame, rightplayer_nameame
                 )
                 with self.subTest(f"{TennisGameClass.__name__} - {testcase}"):
                     self.assertEqual(score, game.score())
