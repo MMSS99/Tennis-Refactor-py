@@ -12,8 +12,12 @@ class TennisGame1:
             self.rightplayer_points += 1
 
     def score(self):
-        result = ""
-        temp_score = 0
+        SCORES_ANNOTATION = {
+                    0: "Love",
+                    1: "Fifteen",
+                    2: "Thirty",
+                    3: "Forty"
+                    }
 
         if self.leftplayer_points == self.rightplayer_points:
             return {
@@ -21,23 +25,10 @@ class TennisGame1:
                 1: "Fifteen-All",
                 2: "Thirty-All",
             }.get(self.leftplayer_points, "Deuce")
-        ############################################################
         elif self.leftplayer_points >= 4 or self.rightplayer_points >= 4:
             return self.__matchpoint()
         else:
-            for i in range(1, 3):
-                if i == 1:
-                    temp_score = self.leftplayer_points
-                else:
-                    result += "-"
-                    temp_score = self.rightplayer_points
-                result += {
-                    0: "Love",
-                    1: "Fifteen",
-                    2: "Thirty",
-                    3: "Forty",
-                }[temp_score]
-        return result
+            return SCORES_ANNOTATION.get(self.leftplayer_points) + "-" + SCORES_ANNOTATION.get(self.rightplayer_points)
     
     def __matchpoint(self):
         winningpart = ''
@@ -47,3 +38,4 @@ class TennisGame1:
             winningpart = self.rightplayer_name
 
         return "" + ("Advantage " if abs(self.leftplayer_points-self.rightplayer_points) == 1 else "Win for ") + winningpart
+    
