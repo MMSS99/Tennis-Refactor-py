@@ -1,4 +1,7 @@
 class TennisGame1:
+    POINT = 1
+    MATCHPOINT = 4
+
     def __init__(self, leftplayer_name, rightplayer_name):
         self.leftplayer_name = leftplayer_name
         self.rightplayer_name = rightplayer_name
@@ -7,9 +10,9 @@ class TennisGame1:
 
     def won_point(self, player_name):
         if player_name == self.leftplayer_name:
-            self.leftplayer_points += 1
+            self.leftplayer_points += TennisGame1.POINT
         else:
-            self.rightplayer_points += 1
+            self.rightplayer_points += TennisGame1.POINT
 
     def score(self):
         SCORES_ANNOTATION = {
@@ -25,7 +28,7 @@ class TennisGame1:
                 1: "Fifteen-All",
                 2: "Thirty-All",
             }.get(self.leftplayer_points, "Deuce")
-        elif self.leftplayer_points >= 4 or self.rightplayer_points >= 4:
+        elif self.leftplayer_points >= TennisGame1.MATCHPOINT or self.rightplayer_points >= TennisGame1.MATCHPOINT:
             return self.__matchpoint()
         else:
             return SCORES_ANNOTATION.get(self.leftplayer_points) + "-" + SCORES_ANNOTATION.get(self.rightplayer_points)
