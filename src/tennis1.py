@@ -14,8 +14,9 @@ class TennisGame1:
     def score(self):
         result = ""
         temp_score = 0
+
         if self.leftplayer_points == self.rightplayer_points:
-            result = {
+            return {
                 0: "Love-All",
                 1: "Fifteen-All",
                 2: "Thirty-All",
@@ -23,13 +24,13 @@ class TennisGame1:
         elif self.leftplayer_points >= 4 or self.rightplayer_points >= 4:
             minus_result = self.leftplayer_points - self.rightplayer_points
             if minus_result == 1:
-                result = "Advantage player1"
+                return "Advantage " + str(self.leftplayer_name)
             elif minus_result == -1:
-                result = "Advantage player2"
+                return "Advantage " + str(self.rightplayer_name)
             elif minus_result >= 2:
-                result = "Win for player1"
+                return "Win for " + str(self.leftplayer_name)
             else:
-                result = "Win for player2"
+                return "Win for " + str(self.rightplayer_name)
         else:
             for i in range(1, 3):
                 if i == 1:
