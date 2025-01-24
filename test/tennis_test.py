@@ -6,18 +6,18 @@ from test.tennis_unittest import play_game, test_cases
 
 
 @pytest.mark.parametrize(
-    "TennisGameClass",
+    "tennisgame_class",
     [
         TennisGame1,
         TennisGame3,
     ],
 )
 @pytest.mark.parametrize(
-    "leftplayer_points_points rightplayer_points_points score leftplayer_nameame rightplayer_nameame".split(), test_cases
+    "leftplayer_points rightplayer_points score leftplayer_name rightplayer_name".split(), test_cases
 )
-def test_get_score_most_games(
-    TennisGameClass, leftplayer_points_points, rightplayer_points_points, score, leftplayer_nameame, rightplayer_nameame
+def test_get_score(
+    tennisgame_class, leftplayer_points, rightplayer_points, score, leftplayer_name, rightplayer_name
 ):
-    game = play_game(TennisGameClass, leftplayer_points_points, rightplayer_points_points, leftplayer_nameame, rightplayer_nameame)
+    game = play_game(tennisgame_class, leftplayer_points, rightplayer_points, leftplayer_name, rightplayer_name)
     assert score == game.score()
 
