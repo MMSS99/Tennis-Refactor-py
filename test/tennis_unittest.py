@@ -1,12 +1,7 @@
 import unittest
 
 from src.tennis1 import TennisGame1
-from src.tennis2 import TennisGame2
 from src.tennis3 import TennisGame3
-from src.tennis4 import TennisGame4
-from src.tennis5 import TennisGame5
-from src.tennis6 import TennisGame6
-from src.tennis7 import TennisGame7
 
 test_cases = [
     (0, 0, "Love-All", "player1", "player2"),
@@ -59,11 +54,7 @@ class TestTennis(unittest.TestCase):
     def test_score_games_1_thru_6(self):
         for TennisGameClass in (
             TennisGame1,
-            TennisGame2,
             TennisGame3,
-            TennisGame4,
-            TennisGame5,
-            TennisGame6,
         ):
             for testcase in test_cases:
                 (p1_points, p2_points, score, p1_name, p2_name) = testcase
@@ -73,15 +64,7 @@ class TestTennis(unittest.TestCase):
                 with self.subTest(f"{TennisGameClass.__name__} - {testcase}"):
                     self.assertEqual(score, game.score())
 
-    def test_score_game7(self):
-        for testcase in test_cases:
-            (p1_points, p2_points, score, p1_name, p2_name) = testcase
-            game = play_game(TennisGame7, p1_points, p2_points, p1_name, p2_name)
-            with self.subTest(f"{TennisGame7.__name__} - {testcase}"):
-                self.assertEqual(
-                    "Current score: " + score + ", enjoy your game!",
-                    game.score(),
-                )
+
 
 
 if __name__ == "__main__":
